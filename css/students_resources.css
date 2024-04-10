@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4ca2cd;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.resource {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resource .icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.resource h3 {
+    margin: 0;
+}
+
+.resource p {
+    margin-top: 5px;
+    color: #666;
+}
+.back-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.back-link i {
+    margin-right: 5px;
+}

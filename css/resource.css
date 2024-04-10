@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.resource {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    box-sizing: border-box; /* Add this property to include padding and border in the width */
+}
+
+.icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.details h3 {
+    margin-top: 0;
+}
+
+.details p {
+    margin-bottom: 0;
+}
+.back-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.back-link i {
+    margin-right: 5px;
+}

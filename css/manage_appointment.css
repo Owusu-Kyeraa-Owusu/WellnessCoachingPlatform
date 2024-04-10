@@ -1,0 +1,112 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#f2f2f2;
+}
+
+header {
+    background-color: #4ca2cd;;
+    color: rgb(7, 8, 7);;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%; /* Set width to 100% */
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 0; /* Remove padding */
+}
+
+/* Calendar Styles */
+.calendar {
+    flex: 1;
+    margin-right: 20px;
+}
+
+/* Appointments Styles */
+.appointments {
+    flex: 2;
+}
+
+.appointments h2 {
+    color: #333;
+}
+
+table {
+    width: 100vw; /* Set width to 100% of viewport width */
+    border-collapse: collapse;
+}
+
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4ca2cd;
+}
+.back-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.back-link i {
+    margin-right: 5px;
+}
+
+.back-link:hover {
+    color: #13273e;
+}
+
+
+.actions a {
+    margin-right: 5px;
+    color: #cad7fda4;;
+    text-decoration: none;
+}
+
+.book-appointment {
+    display: block;
+    margin-top: 20px; /* Move down the link */
+    margin-bottom: 20px; /* Add margin bottom */
+    margin-left: 1100px; /* Move to the right */
+    color: #fff;
+    background-color: #cad7fda4;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    width: 120px;
+    border-radius: 5px;
+}
+
+.book-appointment:hover {
+    background-color: #4ca2cd;
+}
+
+/* manage_appointment.css */
+
+/* Add colors to table header */
+table thead {
+    background-color: #4ca2cd; /* Change to your desired color */
+    color: #fff; /* Text color */
+}
+
+/* Style table header cells */
+table th {
+    padding: 10px; /* Adjust padding as needed */
+}
+
+/* Style table body cells */
+table td {
+    padding: 10px; /* Adjust padding as needed */
+}
+
+/* Optional: Hover effect for table rows */
+table tbody tr:hover {
+    background-color: #f2f2f2; /* Change to your desired hover color */
+}
