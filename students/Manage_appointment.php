@@ -61,35 +61,8 @@
             
         </div>
     </main>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Attach click event listener to "Complete" icons
-    document.querySelectorAll(".complete-appointment").forEach(function(icon) {
-        icon.addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            
-            // Get appointment ID from data attribute
-            var appointmentId = this.getAttribute("data-id");
-            
-            // Send AJAX request to complete the appointment
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "../actions/complete_appointment.php?id=" + appointmentId, true);
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    // Reload the page to reflect changes
-                    window.location.reload();
-                } else {
-                    console.error("Error completing appointment:", xhr.statusText);
-                }
-            };
-            xhr.onerror = function() {
-                console.error("Error completing appointment: Network error.");
-            };
-            xhr.send();
-        });
-    });
-});
-</script>
+    
+
 
 </body>
 </html>

@@ -3,6 +3,7 @@ include("../actions/coaches_count_appointment_made.php");
 include("../actions/coaches_appointment_recieved.php");
 include("../actions/count_uploaded_resources.php");
 include("../actions/count_event.php");
+include("../actions/coach_cancel_appointment.php");
 
 
 

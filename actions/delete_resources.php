@@ -13,7 +13,7 @@ if(isset($_POST['deletefile']) && isset($_POST['filename'])) {
 
     if($stmt->execute()) {
         // Delete the file from the server
-        $filelocation = "C:/xampnew/htdocs/Coaching Platform/image/" . $filename;
+        $filelocation = "WellnessCoachingPlatform\image" . $filename;
         if(file_exists($filelocation)) {
             unlink($filelocation);
         }
@@ -26,6 +26,5 @@ if(isset($_POST['deletefile']) && isset($_POST['filename'])) {
     $stmt->close();
 }
 
-// Redirect back to the page where the resources are displayed
-//header("Location: ../coaches/resources.php");
+
 ?>

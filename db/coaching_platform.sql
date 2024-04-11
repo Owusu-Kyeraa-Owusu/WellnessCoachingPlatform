@@ -53,3 +53,13 @@ CREATE TABLE coach_appointments (
     appointment_time  Time NOT NULL
     
 );
+CREATE TABLE events (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(100) NOT NULL,
+    description VARCHAR(200) NOT NULL,
+    `date`  date,
+    start_time time ,
+    end_time time,
+    location VARCHAR(100) NOT NULL,
+    `status` VARCHAR(100) NOT NULL
+);

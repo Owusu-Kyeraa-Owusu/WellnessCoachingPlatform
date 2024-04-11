@@ -125,7 +125,7 @@ include("../actions/count_event.php");
               
             </table>
           </div>
-          <button onclick="redirectToManageAppointment()" class="btn btn-primary">View Details</button>
+          <button onclick="redirectToResources()" class="btn btn-primary">View Details</button>
         </div>
       </div>
 
@@ -158,6 +158,10 @@ include("../actions/count_event.php");
   <script>
     function redirectToManageAppointment() {
         window.location.href = "../students/Manage_appointment.php";
+    }
+
+    function redirectToResources() {
+        window.location.href = "WellnessCoachingPlatform\students\students_resources.php";
     }
 </script>
 
