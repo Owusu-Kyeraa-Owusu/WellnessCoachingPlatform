@@ -22,6 +22,15 @@ if(isset($_SESSION["id"])) {
         $class = $row["class"];
         $gender = $row["gender"];
         $academic_year = $row["academic_year"];
+        // Assuming you have a column in the users table indicating the user's role
+        $role = $row["role"];
+        
+        // Check if the user is a student
+        if($role !== 'student') {
+            // Redirect to the appropriate profile page (for coaches)
+            header("Location: ../coaches/coach_profile.php");
+            exit();
+        }
     } else {
         // Handle if user data is not found in the users table
         // You can redirect the user or display an error message
@@ -42,7 +51,7 @@ if(isset($_SESSION["id"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Student Profile</title>
     
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
@@ -83,19 +92,22 @@ if(isset($_SESSION["id"])) {
                                     <td width="2%">:</td>
                                     <td><?php echo $name; ?></td>
                                 </tr>
-                               <tr>
-<th width="30%">Academic Year</th>
-<td width="2%">:</td>
-<td><?php echo $academic_year; ?></td>
-</tr>
-</table>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
+                                <tr>
+                                    <th width="30%">Gender</th>
+                                    <td width="2%">:</td>
+                                    <td><?php echo $gender; ?></td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Academic Year</th>
+                                    <td width="2%">:</td>
+                                    <td><?php echo $academic_year; ?></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
