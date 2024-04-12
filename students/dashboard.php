@@ -155,9 +155,7 @@ include("../actions/count_event.php");
         window.location.href = "../students/Manage_appointment.php";
     }
 
-    function redirectToResources() {
-        window.location.href = "WellnessCoachingPlatform\students\students_resources.php";
-    }
+    
 </script>
 
 </body>
