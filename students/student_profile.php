@@ -1,4 +1,7 @@
 <?php
+// Start the session
+session_start();
+
 // Include your database connection file
 include("../settings/connection.php");
 
@@ -71,9 +74,7 @@ if(isset($_SESSION["id"])) {
                 </div>
                 <div class="col-lg-8">
                     <div class="card shadow-sm">
-                        <div class="card-header bg-transparent border-0">
-                            <h3 class="mb-0">General Information</h3>
-                        </div>
+                        
                         <div class="card-body pt-0">
                             <!-- Display user's general information -->
                             <table class="table table-bordered">
@@ -83,4 +84,4 @@ if(isset($_SESSION["id"])) {
                                     <td><?php echo $name; ?></td>
                                 </tr>
                                 <tr>
-                                    <th width="30%">Gender</th
+                                    <th width="30%">Gender</th>
