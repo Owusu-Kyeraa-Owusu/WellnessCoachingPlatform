@@ -18,12 +18,6 @@ include("../actions/count_event.php");
   <div class="container">
     <nav>
       <ul>
-                
-      </a></li>
-        <li><a href="../students/dashboard.php">
-          <i class="fas fa-user-shield"></i>
-          <span class="nav-item">Student</span>
-        </a></li>
         </a></li>
         <li><a href="#">
           <i class="fas fa-menorah"></i>
