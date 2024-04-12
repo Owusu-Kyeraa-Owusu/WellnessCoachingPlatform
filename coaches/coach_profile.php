@@ -1,3 +1,42 @@
+<?php
+// Start the session
+session_start();
+
+// Include your database connection file
+include("../settings/connection.php");
+
+// Initialize variables to avoid PHP notices
+
+// Check if user ID is set
+if(isset($_SESSION["id"])) {
+    $user_id = $_SESSION["id"];
+    
+    // Retrieve user's data from the users table in the database
+    $sql = "SELECT * FROM users WHERE id = $user_id";
+    
+    $result = $conn->query($sql);
+    if($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $name = $row["name"];
+        $phone_number = $row["phone_number"];
+        $email = $row["email"];
+        $gender = $row["gender"];
+        $academic_year = $row["academic_year"];
+    } else {
+        // Handle if user data is not found in the users table
+        // You can redirect the user or display an error message
+        // For example:
+        // header("Location: error.php");
+        // exit();
+    }
+} else {
+    // Handle if user ID is not set (user is not logged in)
+    // You can redirect the user to the login page
+    // For example:
+    // header("Location:../Login/login.php");
+    // exit();
+}
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,58 +51,56 @@
 </head>
 <body>
     <header>
-        <a href="../coaches/dashboard.php" class="back-link"><i class="fas fa-arrow-left"></i></a> 
+        <a href="../students/dashboard.php" class="back-link"><i class="fas fa-arrow-left"></i></a> <!-- Back arrow icon -->
     </header>
+    
     <div class="student-profile py-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card shadow-sm">
                         <div class="card-header bg-transparent text-center">
-                            <img class="profile_img" alt="student dp">
-                            <h3>Mabel Kyeraa Owusu</h3>
+                            <!-- Profile picture -->
+                            <img src='../image/pencil.png' class='profile-picture' style='width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;'>
+                            <!-- User's name -->
+                            <h3><?php echo $name; ?></h3>
                         </div>
-                        <div class="card-body">
-                            <p class="mb-0"><strong class="pr-1">Student ID:</strong>80892025</p>
-                            <p class="mb-0"><strong class="pr-1">Class:</strong>2025</p>
+                        <div class="card-body pt-0">
+                            <!-- Display user's ID and class -->
+                            <p class="mb-1"><strong class="pr-1">Phone Number:</strong> <?php echo $phone_number; ?></p>
+                            <p class="mb-1"><strong class="pr-1">Class:</strong> <?php echo $phone_number; ?></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="card shadow-sm">
-                        <div class="card-header bg-transparent border-0">
-                            <h3 class="mb-0">General Information</h3>
-                        </div>
+                        
                         <div class="card-body pt-0">
+                            <!-- Display user's general information -->
                             <table class="table table-bordered">
                                 <tr>
-                                    <th width="30%">Academic Year</th>
+                                    <th width="30%">Email</th>
                                     <td width="2%">:</td>
-                                    <td>2024</td>
+                                    <td><?php echo $email; ?></td>
                                 </tr>
                                 <tr>
                                     <th width="30%">Gender</th>
                                     <td width="2%">:</td>
-                                    <td>Female</td>
+                                    <td><?php echo $gender; ?></td>
                                 </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card shadow-sm mt-4">
-                        <div class="card-header bg-transparent border-0">
-                            <h3 class="mb-0">Other Information</h3>
-                        </div>
-                        <div class="card-body pt-0">
-                            <ul>
-                                <li>Have a sound mental Health</li>
-                                <li>Have a sound mental Health</li>
-                                <li>Have a sound mental Health</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                               <tr>
+<th width="30%">Academic Year</th>
+<td width="2%">:</td>
+<td><?php echo $academic_year; ?></td>
+</tr>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
