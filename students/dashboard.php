@@ -24,11 +24,6 @@ include("../actions/count_event.php");
     <nav>
       <ul>
                 
-      </a></li>
-        <li><a href="../coaches/dashboard.php">
-          <i class="fas fa-user-shield"></i>
-          <span class="nav-item">Admin</span>
-        </a></li>
         </a></li>
         <li><a href="#">
           <i class="fas fa-menorah"></i>
