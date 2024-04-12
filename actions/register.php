@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $name = $_POST['name'];
     $gender = $_POST['gender'];
-    $role = $_POST['role'];
+    $user_type = $_POST['user_type']; // Changed $role to $user_type
     $studentID = $_POST['studentID'];
     $class = $_POST['class'];
     $academicYear = $_POST['academicYear'];
@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 
     // Insert data into the database
-    $insert_stmt = $conn->prepare("INSERT INTO users (name, gender, role_id, student_id, class, academic_year, phone_number, email, password, terms_and_conditions, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-    $insert_stmt->bind_param("ssiiiiisii", $name, $gender, $role, $studentID, $class, $academicYear, $phoneNumber, $email, $password, $termsAndConditions);
+    $insert_stmt = $conn->prepare("INSERT INTO users (name, gender, user_type, student_id, class, academic_year, phone_number, email, password, terms_and_conditions, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())"); // Removed 'role' column
+    $insert_stmt->bind_param("sssiissssi", $name, $gender, $user_type, $studentID, $class, $academicYear, $phoneNumber, $email, $password, $termsAndConditions); // Changed 'ssiiissss' to 'ssiiissssi'
     
     if ($insert_stmt->execute()) {
         // Registration successful, redirect to login page
