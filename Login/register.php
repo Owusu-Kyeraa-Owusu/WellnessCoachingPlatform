@@ -42,7 +42,7 @@ include('../actions/fetch_roles.php');
                     </div>
 
                     <div class="input-field">
-                        <input type="number" name="studentID" id="studentID" placeholder="Student ID" required>
+                        <input type="number" name="studentID" id="studentID" placeholder="Enter ID" required>
                         <i class="uil uil-user-graduate"></i>
                         <span class="error-message" style="display: none;">Student ID must be only numbers</span>
                     </div>
