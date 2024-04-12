@@ -51,7 +51,7 @@ if(isset($_SESSION["id"])) {
 </head>
 <body>
     <header>
-        <a href="../students/dashboard.php" class="back-link"><i class="fas fa-arrow-left"></i></a> <!-- Back arrow icon -->
+        <a href="../coaches/dashboard.php" class="back-link"><i class="fas fa-arrow-left"></i></a> <!-- Back arrow icon -->
     </header>
     
     <div class="student-profile py-4">
