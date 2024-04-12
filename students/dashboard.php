@@ -120,7 +120,7 @@ include("../actions/count_event.php");
               
             </table>
           </div>
-          <button onclick="redirectToResources()" class="btn btn-primary">View Details</button>
+          <button>View Details</button>
         </div>
       </div>
 
