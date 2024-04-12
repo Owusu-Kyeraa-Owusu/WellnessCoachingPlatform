@@ -1,4 +1,7 @@
 <?php
+
+// After successful login, set the session variables
+
 session_start();
 include("../settings/connection.php");
 
