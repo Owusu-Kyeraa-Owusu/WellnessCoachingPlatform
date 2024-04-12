@@ -18,8 +18,8 @@ if(isset($_SESSION["id"])) {
     if($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $name = $row["name"];
-        $phone_number = $row["phone_number"];
-        $email = $row["email"];
+        $student_id = $row["student_id"];
+        $class = $row["class"];
         $gender = $row["gender"];
         $academic_year = $row["academic_year"];
     } else {
@@ -67,8 +67,8 @@ if(isset($_SESSION["id"])) {
                         </div>
                         <div class="card-body pt-0">
                             <!-- Display user's ID and class -->
-                            <p class="mb-1"><strong class="pr-1">Phone Number:</strong> <?php echo $phone_number; ?></p>
-                            <p class="mb-1"><strong class="pr-1">Class:</strong> <?php echo $phone_number; ?></p>
+                            <p class="mb-1"><strong class="pr-1">Student ID:</strong> <?php echo $student_id; ?></p>
+                            <p class="mb-1"><strong class="pr-1">Class:</strong> <?php echo $class; ?></p>
                         </div>
                     </div>
                 </div>
@@ -79,14 +79,9 @@ if(isset($_SESSION["id"])) {
                             <!-- Display user's general information -->
                             <table class="table table-bordered">
                                 <tr>
-                                    <th width="30%">Email</th>
+                                    <th width="30%">Name</th>
                                     <td width="2%">:</td>
-                                    <td><?php echo $email; ?></td>
-                                </tr>
-                                <tr>
-                                    <th width="30%">Gender</th>
-                                    <td width="2%">:</td>
-                                    <td><?php echo $gender; ?></td>
+                                    <td><?php echo $name; ?></td>
                                 </tr>
                                <tr>
 <th width="30%">Academic Year</th>
