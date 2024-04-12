@@ -4,13 +4,7 @@ include("../actions/coaches_appointment_recieved.php");
 include("../actions/count_uploaded_resources.php");
 include("../actions/count_event.php");
 
-
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,11 +45,7 @@ include("../actions/count_event.php");
           <i class="fas fa-database"></i>
           <span class="nav-item">Events</span>
         </a></li>
-        <li><a href="../coaches/profile.php">
-          <i class="fas fa-cog"></i>
-          <span class="nav-item">profile</span>
-        </a></li>
-
+       
         <li><a href="../coaches/logout.php" class="logout">
           <i class="fas fa-sign-out-alt"></i>
           <span class="nav-item">Log out</span>
