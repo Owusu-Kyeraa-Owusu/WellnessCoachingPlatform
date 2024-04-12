@@ -36,14 +36,10 @@ include('../actions/fetch_roles.php');
                     </div>
 
                     <div class="input-field">
-                        <select name="role" required>
-                            <option value="" disabled selected>Select your role</option>
-                            <?php foreach ($roles as $role): ?>
-                                <option value="<?php echo $role['id']; ?>"><?php echo $role['name']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
+                        <input type="text" name="user_type" id="user_type" placeholder="User type" required>
+                        <i class="uil uil-user-graduate"></i>
+                        <span class="error-message" style="display: none;">Student ID must be letters</span>
                     </div>
-                    
 
                     <div class="input-field">
                         <input type="number" name="studentID" id="studentID" placeholder="Student ID" required>
