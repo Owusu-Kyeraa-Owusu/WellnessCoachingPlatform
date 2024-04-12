@@ -83,5 +83,19 @@ if(isset($_SESSION["id"])) {
                                     <td width="2%">:</td>
                                     <td><?php echo $name; ?></td>
                                 </tr>
-                                <tr>
-                                    <th width="30%">Gender</th>
+                               <tr>
+<th width="30%">Academic Year</th>
+<td width="2%">:</td>
+<td><?php echo $academic_year; ?></td>
+</tr>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
