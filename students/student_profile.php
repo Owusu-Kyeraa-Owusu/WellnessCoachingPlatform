@@ -1,34 +1,29 @@
 <?php
-
-// After successful login, set the session variables
-
-session_start();
+//session_start();
+// Include your database connection file
 include("../settings/connection.php");
 
-// Check if user is logged in
-if (!isset($_SESSION["user_type"])) {
-    // Redirect to login page if user is not logged in
-    header("Location:../Login/login.php");
-    exit();
-}
+// Initialize variables to avoid PHP notices
 
-// Retrieve user's data from session variables
-$user_type = $_SESSION["user_type"];
-$sql = "SELECT * FROM users WHERE id = $user_type";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $name = $row["name"];
-    $student_id = $row["student_id"];
-    $class = $row["class"];
-    $gender = $row["gender"];
-    $academic_year = $row["academic_year"];
-} else {
-    // Redirect to login page if user data is not found
-    header("Location: ../Login/login.php");
-    exit();
-}
-?>
+
+// Check if role is selected as student
+if (isset($_POST["user_type"]) && $_POST["user_type"] == "student"){
+    // Retrieve user's data from the database
+    $sql = "SELECT * FROM users "; // Assuming there's only one student
+    $result = $conn->query($sql);
+    $row=mysqli_fetch_assoc($result);
+            // $_SESSION["email"] = $email;
+            // $_SESSION["id"] = $id;
+            $name = $row["name"];
+            $student_id = $row["student_id"];
+            $class = $row["class"];
+            $gender = $row["gender"];
+            $academic_year = $row["academic_year"];
+            
+
+}        
+
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,18 +46,18 @@ if ($result->num_rows > 0) {
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card shadow-sm">
-                        <div class="card-header bg-transparent text-center">
-                            <!-- Profile picture -->
-                            <img src='../image/pencil.png' class='profile-picture' style='width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;'>
-                            <!-- User's name -->
-                            <h3><?php echo $name; ?></h3>
-                        </div>
-                        <div class="card-body pt-0">
-                            <!-- Display user's ID and class -->
-                            <p class="mb-1"><strong class="pr-1">Student ID:</strong> <?php echo $student_id; ?></p>
-                            <p class="mb-1"><strong class="pr-1">Class:</strong> <?php echo $class; ?></p>
-                        </div>
-                    </div>
+                      
+                        
+                    <div class="card-header bg-transparent text-center">
+        <img src='../image/pencil.png' class='profile-picture' style='width: 80px; height: 80px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;'>
+        <h3><?php echo $name; ?></h3>
+</div>
+
+
+   
+    <p class="mb-1"><strong class="pr-1">Student ID:</strong> <?php echo $student_id; ?></p>
+    <p class="mb-1"><strong class="pr-1">Class:</strong> <?php echo $class; ?></p>
+</div>
                 </div>
                 <div class="col-lg-8">
                     <div class="card shadow-sm">
@@ -70,7 +65,6 @@ if ($result->num_rows > 0) {
                             <h3 class="mb-0">General Information</h3>
                         </div>
                         <div class="card-body pt-0">
-                            <!-- Display user's general information -->
                             <table class="table table-bordered">
                                 <tr>
                                     <th width="30%">Name</th>
@@ -90,9 +84,10 @@ if ($result->num_rows > 0) {
                             </table>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
 </body>
-</html>
+</html> 
